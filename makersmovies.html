@@ -7,12 +7,13 @@
     <form id="movie-search" >
     <input id="movie-title" placeholder='Enter movie title'>
     <button type='submit'>Search</button>
+    </form>
     <div class='movie-container'>
       
     </div>
 
     <template id="movie-information">
-      <article class='movie' style="background-image: url(http://image.tmdb.org/t/p/w300{{ poster_path }});">
+      <article class='movie' style="background-image: url(http://image.tmdb.org/t/p/w500{{ poster_path }});">
         <div class="info">
         <h4>Title: {{ title }}</h4>
         <h4>Release Date: {{ release_date }}</h4>
@@ -25,14 +26,23 @@
     <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
     <script src='mustache.js'></script>
     <script>
+      
       $(document).ready(function(){
-        $.get('https://api.themoviedb.org/3/movie/550?api_key=130c206c991171c57f5a6df279b17fcb', function(movie){
-          var newMovie = Mustache.render($('#movie-information').html(), movie);
-          var moviePoster = Mustache.render($('.poster-url').html());
-          $('.movie-container').append(newMovie);
-          $('.movie-container').append(moviePoster);
-        })
+        
       });
+
+      function addMovieToScreen(movie) {
+        $.get('https://http://api.themoviedb.org/3/search/movie?api_key=130c206c991171c57f5a6df279b17fcb&query='+movie, function(movie){
+            var newMovie = Mustache.render($('#movie-information').html(), movie);
+            $('.movie-container').append(newMovie);
+          })
+      };
+
+      $('#movie-search').on('submit', function(event){
+        event.preventDefault();
+        var movieTitle = $('#movie-title').val();
+        addMovieToScreen(movieTitle)
+      })
     </script>
     <script>
 
