@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Makers Academy Movie Search</title>
+    <link href='stylesheet.css' rel='stylesheet'>
   </head>
   <body>
     <form id="movie-search" >
@@ -11,14 +12,15 @@
     </div>
 
     <template id="movie-information">
-      <article class='movie'>
-
+      <article class='movie' style="background-image: url(http://image.tmdb.org/t/p/w300{{ poster_path }});">
+        <div class="info">
         <h4>Title: {{ title }}</h4>
         <h4>Release Date: {{ release_date }}</h4>
         <h4>Runtime: {{ runtime }}</h4>
-        <h4>Tagline: {{ tagline }}</h4>
+        <h3>{{ tagline }}</h3>
+        </div>
       </article>
-      <span class='poster-url'>http://image.tmdb.org/t/p/w500{{ poster_path }}</span>
+    
     </template>
     <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
     <script src='mustache.js'></script>
