@@ -1,7 +1,39 @@
 <html>
-<head>
-<title>Makers Academy Movie Search</title>
-</head>
-<body>
-</body>
+  <head>
+    <title>Makers Academy Movie Search</title>
+  </head>
+  <body>
+    <form id="movie-search" >
+    <input id="movie-title" placeholder='Enter movie title'>
+    <button type='submit'>Search</button>
+    <div class='movie-container'>
+      
+    </div>
+
+    <template id="movie-information">
+      <article class='movie'>
+
+        <h4>Title: {{ title }}</h4>
+        <h4>Release Date: {{ release_date }}</h4>
+        <h4>Runtime: {{ runtime }}</h4>
+        <h4>Tagline: {{ tagline }}</h4>
+      </article>
+      <span class='poster-url'>http://image.tmdb.org/t/p/w500{{ poster_path }}</span>
+    </template>
+    <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
+    <script src='mustache.js'></script>
+    <script>
+      $(document).ready(function(){
+        $.get('https://api.themoviedb.org/3/movie/550?api_key=130c206c991171c57f5a6df279b17fcb', function(movie){
+          var newMovie = Mustache.render($('#movie-information').html(), movie);
+          var moviePoster = Mustache.render($('.poster-url').html());
+          $('.movie-container').append(newMovie);
+          $('.movie-container').append(moviePoster);
+        })
+      });
+    </script>
+    <script>
+
+    </script>
+  </body>
 </html>
