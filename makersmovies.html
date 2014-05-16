@@ -2,7 +2,6 @@
   <head>
     <title>Makers Academy Movie Search</title>
     <link href='stylesheet.css' rel='stylesheet'>
-    <script type="text/javascript" src='movieScript.js'></script>
     <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
     <script src='mustache.js'></script>
   </head>
@@ -14,12 +13,9 @@
     
     <div class='movie-container'>
     </div>
- <input type="radio" name="cover-item" id="cover-2">
-  <input type="radio" name="cover-item" id="cover-2">
-   <input type="radio" name="cover-item" id="cover-2">
-    <template id="movie-information">
-      <article id='poster'>
-        <img src='http://image.tmdb.org/t/p/w500{{ poster_path }}' />
+     <template id="movie-information">
+      <article id='movie' type="radio">
+        <img class='movie-poster' src='http://image.tmdb.org/t/p/w500{{ poster_path }}' />
         <div class="info">
           <h4>Title: {{ title }}</h4>
           <h4>Release Date: {{ release_date }}</h4>
