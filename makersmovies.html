@@ -22,31 +22,31 @@
       <div class="info">
         <h4>Title: {{ title }}</h4>
         <h4>Release Date: {{ release_date }}</h4>
-        <h4>Runtime: {{ runtime }}</h4>
+       <!--  <h4>Runtime: {{ runtime }}</h4> -->
         <h3>{{ tagline }}</h3>
         </div>
     </template>
-      <script>
-$(document).ready(function(){ 
-});
+    
+    <script>
+    $(document).ready(function(){ });
 
-function searchForMovie(movie) {
-  $.get('https://api.themoviedb.org/3/search/movie?api_key=130c206c991171c57f5a6df279b17fcb&query='+movie, function(movie){
-      var movieResults = (movie["results"][0]);
-      var newMovie = Mustache.render($('#movie-information').html(), movieResults);
-    addMovieToScreen(newMovie);
-    });
-};
+    function searchForMovie(movie) {
+      $.get('https://api.themoviedb.org/3/search/movie?api_key=130c206c991171c57f5a6df279b17fcb&query='+movie, function(movie){
+          var movieResults = (movie["results"][0]);
+          var newMovie = Mustache.render($('#movie-information').html(), movieResults);
+        addMovieToScreen(newMovie);
+        });
+    };
 
-function addMovieToScreen(movie) {
-  $('.movie-container').prepend(movie);
-};
+    function addMovieToScreen(movie) {
+      $('.movie-container').prepend(movie);
+    };
 
-$('#movie-search').on('submit', function(event){
-  event.preventDefault();
-  var movieTitle = $('#movie-title').val();
-  searchForMovie(movieTitle);
-})
-</script>
+    $('#movie-search').on('submit', function(event){
+      event.preventDefault();
+      var movieTitle = $('#movie-title').val();
+      searchForMovie(movieTitle);
+    })
+    </script>
   </body>
 </html>

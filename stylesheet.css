@@ -1,31 +1,10 @@
 * {boxsizing: border-box;
-
+}
   }
   .movie-information {
     display: inline-block;
-  }
-  .poster {
-    margin: 5px;
-    height: 750px;
-    width: 500px;
-    border-radius: 5px;
-    background: no-repeat;
-    background-size: contain;
     border: 2px solid black;
-    animation: slide 4s infinite;
+    border-radius: 5px;
+    
   }
-
-  .info {
-    height: 200px;
-    width: 280px;
-    margin: 5px;
-     border-radius: 5px;
-     padding-left:  10px;
-     padding-top: 0px;
-    background-color: #fff;
-    opacity: 0.7;
-    vertical-align: center;
-
-  }
-
-
+ 
