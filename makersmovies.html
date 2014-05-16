@@ -32,9 +32,10 @@
       });
 
       function addMovieToScreen(movie) {
-        $.get('https://http://api.themoviedb.org/3/search/movie?api_key=130c206c991171c57f5a6df279b17fcb&query='+movie, function(movie){
-            var newMovie = Mustache.render($('#movie-information').html(), movie);
-            $('.movie-container').append(newMovie);
+        $.get('https://api.themoviedb.org/3/search/movie?api_key=130c206c991171c57f5a6df279b17fcb&query='+movie, function(movie){
+            var movieResults = (movie["results"][0])
+            var newMovie = Mustache.render($('#movie-information').html(), movieResults);
+            $('.movie-container').prepend(newMovie);
           })
       };
 
