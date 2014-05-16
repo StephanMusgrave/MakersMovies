@@ -14,7 +14,7 @@
     <div class='movie-container'>
     </div>
      <template id="movie-information">
-      <article id='movie' type="radio">
+      <article id='movie'>
         <img class='movie-poster' src='http://image.tmdb.org/t/p/w500{{ poster_path }}' />
         <div class="info">
           <h4>Title: {{ title }}</h4>
@@ -38,6 +38,11 @@
 
     function addMovieToScreen(movie) {
       $('.movie-container').prepend(movie);
+    
+
+    $('article:nth-child(5)').fadeOut(6000, function(){
+            $(this).remove()
+          })
     };
 
     $('#movie-search').on('submit', function(event){

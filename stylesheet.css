@@ -19,6 +19,8 @@
 }
 
 .info {
+  float:left;
+  /*display: inline-block;*/
   border: 2px solid black;
   border-radius: 5px;
   background-color: gray;
@@ -28,7 +30,7 @@
 article {
   float:left;
 
-  display: inline-block;
+  /*display: inline-block;*/
   
   border: 2px solid black;
   border-radius: 5px;
@@ -37,7 +39,7 @@ article {
   
   padding:  10px;
   
-  background-color: gray;
+  background-color: #fffß ;
   
   vertical-align: center;
 
