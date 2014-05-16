@@ -2,14 +2,15 @@
   <head>
     <title>Makers Academy Movie Search</title>
     <link href='stylesheet.css' rel='stylesheet'>
+    <link href='template.html'>
   </head>
   <body>
     <form id="movie-search" >
-    <input id="movie-title" placeholder='Enter movie title'>
-    <button type='submit'>Search</button>
+      <input id="movie-title" placeholder='Enter movie title'>
+      <button type='submit'>Search</button>
     </form>
+    
     <div class='movie-container'>
-      
     </div>
 
     <template id="movie-information">
@@ -31,18 +32,24 @@
         
       });
 
-      function addMovieToScreen(movie) {
+      function searchForMovie(movie) {
         $.get('https://api.themoviedb.org/3/search/movie?api_key=130c206c991171c57f5a6df279b17fcb&query='+movie, function(movie){
-            var movieResults = (movie["results"][0])
+            var movieResults = (movie["results"][0]);
             var newMovie = Mustache.render($('#movie-information').html(), movieResults);
-            $('.movie-container').prepend(newMovie);
-          })
+          addMovieToScreen(newMovie);
+          });
+        
+      };
+
+      function addMovieToScreen(movie) {
+        $('.movie-container').prepend(movie);
+          
       };
 
       $('#movie-search').on('submit', function(event){
         event.preventDefault();
         var movieTitle = $('#movie-title').val();
-        addMovieToScreen(movieTitle)
+        searchForMovie(movieTitle);
       })
     </script>
     <script>
