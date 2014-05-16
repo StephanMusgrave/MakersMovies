@@ -1,15 +1,20 @@
 * {boxsizing: border-box;
 
   }
-
-  .movie {
+  .movie-information {
+    display: inline-block;
+  }
+  .poster {
+    margin: 5px;
     height: 750px;
     width: 500px;
     border-radius: 5px;
     background: no-repeat;
     background-size: contain;
     border: 2px solid black;
+    animation: slide 4s infinite;
   }
+
   .info {
     height: 200px;
     width: 280px;
@@ -22,3 +27,5 @@
     vertical-align: center;
 
   }
+
+
