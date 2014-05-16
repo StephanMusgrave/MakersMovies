@@ -14,17 +14,19 @@
     
     <div class='movie-container'>
     </div>
-
+ <input type="radio" name="cover-item" id="cover-2">
+  <input type="radio" name="cover-item" id="cover-2">
+   <input type="radio" name="cover-item" id="cover-2">
     <template id="movie-information">
       <article id='poster'>
-      <img src='http://image.tmdb.org/t/p/w500{{ poster_path }}'>
-      </article>
-      <div class="info">
-        <h4>Title: {{ title }}</h4>
-        <h4>Release Date: {{ release_date }}</h4>
+        <img src='http://image.tmdb.org/t/p/w500{{ poster_path }}' />
+        <div class="info">
+          <h4>Title: {{ title }}</h4>
+          <h4>Release Date: {{ release_date }}</h4>
        <!--  <h4>Runtime: {{ runtime }}</h4> -->
-        <h3>{{ tagline }}</h3>
+          <h3>{{ tagline }}</h3>
         </div>
+      </article>
     </template>
     
     <script>
