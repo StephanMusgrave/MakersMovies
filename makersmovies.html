@@ -39,8 +39,8 @@
     function addMovieToScreen(movie) {
       $('.movie-container').prepend(movie);
     
-
-    $('article:nth-child(4)').fadeOut(9000, function(){
+      // $('article').slideDown(1500);
+      $('article:nth-child(5)').fadeOut(5000, function(){
             $(this).remove()
           })
     };
