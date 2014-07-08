@@ -1,7 +1,7 @@
 # MakersMovies
+Week 7 project at Makers Academy
 
 ## Objectives
-
 A miniproject to incorporate themoviedb.org API into a webpage.
 
 ## How to run it
