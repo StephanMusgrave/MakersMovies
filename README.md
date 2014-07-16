@@ -1,6 +1,5 @@
 # MakersMovies
 Week 7 project at Makers Academy
-
 ![](makersmovies.png)
 
 ## Learning Objectives
@@ -28,5 +27,7 @@ A miniproject to incorporate themoviedb.org API into a webpage.
 [Steve Musgrave]:https://github.com/StephanMusgrave]
 [Daniel Le Dosquet-Bergquist]:https://github.com/danldb
 [themoviedb API]:http://www.themoviedb.org/documentation/api
+
+## Further work to do
 
 
