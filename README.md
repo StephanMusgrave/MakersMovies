@@ -1,5 +1,5 @@
 # MakersMovies
-Week 7 project at Makers Academy
+Week 7 project at [Makers Academy]
 ![](makersmovies.png)
 
 ## Learning Objectives
